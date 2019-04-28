@@ -1,0 +1,14 @@
+1.xls打开必须关闭
+2.用字典来做DDT： login_datas = []
+    for row in range(2, sheet.max_row + 1):
+        user = {
+            "url": sheet.cell(row, 1).value,
+            "method": sheet.cell(row, 2).value,
+            "data": json.loads(sheet.cell(row, 3).value),
+            "exp_data": sheet.cell(row, 4).value,
+            "case_id" : sheet.cell(row, 7).value,
+        }
+        login_datas.append(user)
+    wb.close()
+3.res为字典：用res_data["msg"] 来验证数据
+4.json的数据来验证
